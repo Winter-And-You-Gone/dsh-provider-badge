@@ -1,0 +1,65 @@
+{
+  "name": "dsh-provider-badge",
+  "version": "0.2.4",
+  "type": "module",
+  "main": "index.js",
+  "description": "DeepSeek Harness 插件：在输入框右下角的模型胶囊左侧显示当前供应商名称的灰色胶囊徽章。纯客户端，零源码改动。",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Winter-And-You-Gone/dsh-provider-badge.git"
+  },
+  "homepage": "https://github.com/Winter-And-You-Gone/dsh-provider-badge#readme",
+  "bugs": {
+    "url": "https://github.com/Winter-And-You-Gone/dsh-provider-badge/issues"
+  },
+  "keywords": [
+    "deepseek-harness",
+    "dsh",
+    "plugin",
+    "provider",
+    "badge",
+    "model-capsule"
+  ],
+  "engines": {
+    "node": ">=20"
+  },
+  "scripts": {
+    "check": "node --check client.js && node --check index.js",
+    "test": "node --test tests/*.test.mjs",
+    "test:sandbox": "node --test --test-isolation=none tests/*.test.mjs"
+  },
+  "files": [
+    "index.js",
+    "client.js",
+    "cordis.patch.yml",
+    "install.ps1",
+    "README.md",
+    "LICENSE",
+    "locale/*.json",
+    "icon.svg",
+    "preview/capsule-dark.png"
+  ],
+  "exports": {
+    ".": "./index.js",
+    "./client": "./client.js",
+    "./cordis.patch.yml": "./cordis.patch.yml",
+    "./locale/*.json": "./locale/*.json",
+    "./icon": "./icon.svg",
+    "./package.json": "./package.json"
+  },
+  "dsh": {
+    "bundle": {
+      "patch": "./cordis.patch.yml"
+    },
+    "client": {
+      "platform": "web",
+      "inject": [
+        "@deepseek-ai/dsh-client-ui-conversation",
+        "@deepseek-ai/dsh-client-ui-model-selection",
+        "@deepseek-ai/dsh-client-ui-renderer",
+        "@deepseek-ai/dsh-client-locale"
+      ]
+    }
+  }
+}

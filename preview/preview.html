@@ -1,0 +1,85 @@
+<!doctype html>
+<html><head><meta charset="utf-8"><title>dsh-provider-badge preview</title>
+<style>
+  * { box-sizing: border-box; }
+  body { margin: 0; font-family: "Segoe UI", "Microsoft YaHei", system-ui, sans-serif; }
+  .page { width: 1000px; padding: 26px 28px 30px; }
+  .page.dark { background: #1b1b1d; }
+  .page.light { background: #f6f7f9; }
+  .caption { font-size: 12px; letter-spacing: .02em; margin: 0 0 8px 4px; }
+  .dark .caption { color: #8b98ad; }
+  .light .caption { color: #7b8494; }
+  .composer { width: 944px; border-radius: 18px; padding: 16px 18px 14px; margin-bottom: 22px; }
+  .dark .composer { background: #262628; border: 1px solid #ffffff14; }
+  .light .composer { background: #ffffff; border: 1px solid #26314814; box-shadow: 0 1px 2px #2631480a; }
+  .draft { font-size: 14px; line-height: 22px; margin-bottom: 18px; }
+  .dark .draft { color: #d8dde8; }
+  .light .draft { color: #2b3240; }
+  .controls { display: flex; align-items: center; justify-content: flex-end; gap: 12px; }
+  .spacer { flex: 1; }
+  .dpb-badge { display: inline-flex; align-items: center; justify-content: center; height: 32px; max-width: 168px; padding: 0 11px; border: 0; border-radius: 999px; corner-shape: round; background: var(--hover); color: var(--secondary); font-size: 11px; line-height: 17px; font-weight: 500; white-space: nowrap; overflow: hidden; }
+  .dpb-badge[data-provider-kind="official"] { color: rgb(79, 140, 255); }
+  .model { display: inline-flex; align-items: center; gap: 6px; height: 32px; padding: 0 12px; border-radius: 999px; background: var(--hover); color: var(--secondary); font-size: 11px; line-height: 17px; font-weight: 500; }
+  .chev { width: 10px; height: 10px; opacity: .65; }
+  .dark { --hover: rgba(255,255,255,.08); --secondary: #9fb3d1; }
+  .light { --hover: rgba(38,49,72,.06); --secondary: #4f5867; }
+</style></head>
+<body>
+
+<section class="page dark">
+  <p class="caption">第三方供应商（灰色文字）</p>
+  <div class="composer">
+    <div class="draft">帮我看一下这个模型的上下文占用。</div>
+    <div class="controls">
+      <span class="spacer"></span>
+      <span class="dpb-badge"><span>Provider-A</span></span>
+      <span class="model">DeepSeek-V4.1-Flash
+        <svg class="chev" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="m7 9 5 5 5-5"/></svg>
+      </span>
+    </div>
+  </div>
+
+  <p class="caption">官方供应商（仅文字为 rgb(79, 140, 255)）</p>
+  <div class="composer">
+    <div class="draft">继续优化供应商徽章的配色。</div>
+    <div class="controls">
+      <span class="spacer"></span>
+      <span class="dpb-badge" data-provider-kind="official"><span>DeepSeek 账户</span></span>
+      <span class="model">DeepSeek-V4.1-Flash
+        <svg class="chev" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="m7 9 5 5 5-5"/></svg>
+      </span>
+    </div>
+  </div>
+</section>
+
+<section class="page light">
+  <p class="caption">第三方供应商（灰色文字）</p>
+  <div class="composer">
+    <div class="draft">帮我看一下这个模型的上下文占用。</div>
+    <div class="controls">
+      <span class="spacer"></span>
+      <span class="dpb-badge"><span>Provider-A</span></span>
+      <span class="model">DeepSeek-V4.1-Flash
+        <svg class="chev" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="m7 9 5 5 5-5"/></svg>
+      </span>
+    </div>
+  </div>
+
+  <p class="caption">官方供应商（仅文字为 rgb(79, 140, 255)）</p>
+  <div class="composer">
+    <div class="draft">继续优化供应商徽章的配色。</div>
+    <div class="controls">
+      <span class="spacer"></span>
+      <span class="dpb-badge" data-provider-kind="official"><span>DeepSeek 账户</span></span>
+      <span class="model">DeepSeek-V4.1-Flash
+        <svg class="chev" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="m7 9 5 5 5-5"/></svg>
+      </span>
+    </div>
+  </div>
+</section>
+
+<script>
+  if (location.hash === '#dark') document.querySelector('.light').style.display = 'none';
+  if (location.hash === '#light') document.querySelector('.dark').style.display = 'none';
+</script>
+</body></html>

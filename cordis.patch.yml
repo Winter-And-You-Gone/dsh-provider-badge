@@ -1,0 +1,6 @@
+# dsh bundle patch：把本插件插进 profile 的 layer stack。
+# 由 dsh.bundle.patch 指向本文件（plugin_manager install_bundle 使用）；
+# 手工安装时 install.ps1 会把同样的条目追加到 profile 的 cordis.patch.yml。
+- insert:
+    - id: dsh-provider-badge
+      name: 'dsh-provider-badge'

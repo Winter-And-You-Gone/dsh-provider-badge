@@ -1,0 +1,6 @@
+{
+  "meta": {
+    "title": "Provider Badge",
+    "description": "Shows the current provider as a grey capsule badge beside the composer's model pill."
+  }
+}
